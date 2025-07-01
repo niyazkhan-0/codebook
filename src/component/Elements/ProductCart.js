@@ -16,7 +16,7 @@ export const ProductCard = ({product}) => {
         else{
             setIsInCart(false)
         }
-    },[cartList])
+    },[cartList])//eslint-disable-line
     return (
         <div className="m-3 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
             <Link to={`/product/${id}`} className="relative" >

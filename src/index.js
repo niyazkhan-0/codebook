@@ -5,7 +5,7 @@ import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { FilterProvider, CartProvider } from './context';
 import { ScroolToTop } from './component';
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer} from 'react-toastify'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

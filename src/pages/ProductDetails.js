@@ -36,7 +36,7 @@ export const ProductDetails = () => {
         }
         fetchProducts()
 
-    }, [])
+    }, [])//eslint-disable-line
 
     useEffect(() => {
         const inCart = cartList.find((item) => item.id === product.id)
@@ -46,7 +46,7 @@ export const ProductDetails = () => {
         else {
             setIsInCart(false)
         }
-    }, [cartList, product.id])
+    }, [cartList, product.id])//eslint-disable-line
     return (
         <main>
             <section>

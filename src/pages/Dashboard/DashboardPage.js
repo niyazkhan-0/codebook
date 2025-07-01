@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { toast } from "react-toastify"
 import { DashboardCard } from "./components/DashboardCard"
 import { DashboardEmpty } from "./components/DashboardEmpty"
-import { getUser, getUserOrders } from "../../services"
+import { getUserOrders } from "../../services"
 import { useTitle } from './../../hooks/useTitle';
 
 export const DashbaordPage = () => {

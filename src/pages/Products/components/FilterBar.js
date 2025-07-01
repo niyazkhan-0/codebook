@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useFilter } from '../../../context'
 
 export const FilterBar = ({ setShow }) => {

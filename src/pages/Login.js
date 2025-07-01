@@ -22,6 +22,7 @@ export const Login = () => {
             }
             const data = await login(authDetail)
             data.accessToken ? navigate("/product") : toast.error(data)
+
         } catch (error) {
             toast.error(error.message, {
                 position: "top-center",

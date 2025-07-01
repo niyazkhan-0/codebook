@@ -15,8 +15,8 @@ export async function getUser() {
         method: "GET",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` }
     });
-    if(!response.ok){
-        throw{message : response.message, status: response.status}      //eslint-disable-line
+    if (!response.ok) {
+        throw { message: response.message, status: response.status }      //eslint-disable-line
     }
 
     const data = await response.json();
@@ -31,8 +31,8 @@ export async function getUserOrders() {
     }
 
     const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders?user.id=${cbid}`, requestOption);
-    if(!response.ok){
-        throw{message : response.message, status: response.status}    //eslint-disable-line  
+    if (!response.ok) {
+        throw { message: response.message, status: response.status }    //eslint-disable-line  
     }
 
     const data = await response.json()
@@ -42,12 +42,6 @@ export async function getUserOrders() {
 export async function createOrder(cartList, total, user) {
 
     const { token, cbid } = getSession()
-    const requestOption = {
-        method: "POST",
-        headers: { "content-type": "application/json", Authorization: `Bearer ${token}` },
-        body: JSON.stringify(order)
-    }
-
     const order = {
         products: cartList,
         amount_paid: total,
@@ -59,9 +53,15 @@ export async function createOrder(cartList, total, user) {
         }
     }
 
-    const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders`,requestOption )
-    if(!response.ok){
-        throw{message : response.message, status: response.status}      //eslint-disable-line
+    const requestOption = {
+        method: "POST",
+        headers: { "content-type": "application/json", Authorization: `Bearer ${token}` },
+        body: JSON.stringify(order)
+    }
+
+    const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders`, requestOption)
+    if (!response.ok) {
+        throw { message: response.message, status: response.status }      //eslint-disable-line
     }
 
     const data = await response.json()

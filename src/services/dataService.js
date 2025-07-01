@@ -16,7 +16,7 @@ export async function getUser() {
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` }
     });
     if(!response.ok){
-        throw{message : response.message, status: response.status}      
+        throw{message : response.message, status: response.status}      //eslint-disable-line
     }
 
     const data = await response.json();
@@ -32,7 +32,7 @@ export async function getUserOrders() {
 
     const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders?user.id=${cbid}`, requestOption);
     if(!response.ok){
-        throw{message : response.message, status: response.status}      
+        throw{message : response.message, status: response.status}    //eslint-disable-line  
     }
 
     const data = await response.json()
@@ -61,7 +61,7 @@ export async function createOrder(cartList, total, user) {
 
     const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders`,requestOption )
     if(!response.ok){
-        throw{message : response.message, status: response.status}      
+        throw{message : response.message, status: response.status}      //eslint-disable-line
     }
 
     const data = await response.json()
